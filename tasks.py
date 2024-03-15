@@ -5,6 +5,7 @@ from invoke import task
 def clean(c):
     """Clean up temporary files."""
     c.run("rm -rf build dist")
+    c.run("git clean -xdf")
 
 
 @task
@@ -23,6 +24,7 @@ def test(c):
 def lint(c):
     """Lint the code."""
     c.run("black .")
+    c.run("flake8 .")
 
 
 @task(pre=[lint, test])
