@@ -1,7 +1,13 @@
 import tkinter as tk
+import time
 
 def close_window():
     window.destroy()
+
+def update_time():
+    current_time = time.strftime('%H:%M:%S')  # Get current time in HH:MM:SS format
+    label.config(text=current_time)
+    window.after(1000, update_time)  # Update every second
 
 # Create the main window without title bar and buttons
 window = tk.Tk()
@@ -19,9 +25,12 @@ x_pos = screen_width - window_width
 y_pos = 0
 window.geometry(f'{window_width}x{window_height}+{x_pos}+{y_pos}')
 
-# Create a label widget
-label = tk.Label(window, text='Floating Window')
-label.pack(pady=20)
+# Create a label widget with the current time
+label = tk.Label(window, font=('Arial', 24), fg='white', bg='black')
+label.pack(fill=tk.BOTH, expand=True)
+
+# Update the time initially and schedule updates every second
+update_time()
 
 # Schedule the window to close after 5 seconds
 window.after(5000, close_window)
