@@ -10,6 +10,7 @@ def close_window():
 def update_time():
     current_time = time.strftime("%H:%M:%S")  # Get current time
     label.config(text=current_time)
+    # cw.activate()  # Reset focus back
     window.after(1000, update_time)  # Update every second
 
 
@@ -20,9 +21,8 @@ cw = gw.getActiveWindow()
 window = tk.Tk()
 window.overrideredirect(True)  # Remove title bar and buttons
 window.attributes("-topmost", 1)  # Make the window stay on top
-
-# Reset focus back
-cw.activate()
+# Set the -alpha value to 0.6
+window.attributes("-alpha", 0.6)
 
 # Calculate the screen width and height
 screen_width = window.winfo_screenwidth()
