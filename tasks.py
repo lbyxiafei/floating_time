@@ -2,6 +2,11 @@ from invoke import task
 
 
 @task
+def run(c):
+    c.run("python ./src/main.py")
+
+
+@task
 def clean(c):
     """Clean up temporary files."""
     c.run("rm -rf build dist")
@@ -37,8 +42,3 @@ def lint(c):
 def check(c):
     """Check the code quality and run tests."""
     pass
-
-
-@task
-def run(c):
-    c.run("python ./src/main.py")
