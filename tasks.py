@@ -3,7 +3,7 @@ from invoke import task
 
 @task
 def run(c):
-    c.run("python ./src/main.py")
+    c.run("python ./src/floatingtime/main.py")
 
 
 @task
