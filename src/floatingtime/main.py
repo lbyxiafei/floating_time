@@ -1,4 +1,6 @@
-import schedule, time, sys
+import time
+import schedule
+import sys
 
 
 from time_window import TimeWindow

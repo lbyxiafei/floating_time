@@ -1,17 +1,22 @@
 import tkinter as tk
 import time
+import pygetwindow as gw
+
+from pygetwindow import PyGetWindowException
 
 
 class TimeWindow:
     def __init__(self):
+        self.cw = gw.getActiveWindow()  # Get current active window
+
         self.window = tk.Tk()
         self.window.overrideredirect(True)  # Remove title bar and buttons
         self.window.attributes("-topmost", 1)  # Make the window stay on top
-        self.window.attributes("-alpha", 0.6)  # Set the -alpha value to 0.6
+        self.window.attributes("-alpha", 0.8)  # Set the -alpha value to 0.6
 
-        # Calculate the screen width and height
         self.screen_width = self.window.winfo_screenwidth()
         self.screen_height = self.window.winfo_screenheight()
+
         # Set the window size and position (top-right corner)
         self.window_width = 200
         self.window_height = 100
@@ -20,19 +25,24 @@ class TimeWindow:
         self.window.geometry(
             f"{self.window_width}x{self.window_height}+{self.x_pos}+{self.y_pos}"
         )
-        # Create a label widget with the current time
-        self.label = tk.Label(self.window, font=("Arial", 24), fg="white", bg="black")
+
+        self.label = tk.Label(self.window, font=("Arial", 36), fg="white", bg="black")
         self.label.pack(fill=tk.BOTH, expand=True)
 
-        self.update_time()  # Update the time initially and schedule updates every second
+        self.update_time()
         self.window.after(10000, self.close_window)
 
-    def update_time(self):
-        current_time = time.strftime("%H:%M:%S")  # Get current time in HH:MM:SS format
-        self.label.config(text=current_time)
-        self.window.update_idletasks()  # Update the window without taking focus
+    def _change_focus_back(self):
+        try:
+            self.cw.activate()
+        except PyGetWindowException as ex:
+            print(ex)
 
-        # Schedule the update_time method every second
+    def update_time(self):
+        self._change_focus_back()
+        current_time = time.strftime("%H:%M:%S")
+        self.label.config(text=current_time)
+        self.window.update_idletasks()
         self.window.after(1000, self.update_time)
 
     def show(self):
