@@ -7,6 +7,11 @@ def run(c):
 
 
 @task
+def debug(c):
+    c.run("python ./src/floatingtime/main.py debug")
+
+
+@task
 def clean(c):
     """Clean up temporary files."""
     c.run("rm -rf build dist")
