@@ -11,7 +11,13 @@ def clean(c):
 @task
 def build(c):
     """Build the project."""
-    c.run("python setup.py sdist bdist_wheel")
+    c.run("python -m build")
+
+
+@task(pre=[clean, build])
+def release(c):
+    """Clean up, build, and release the project."""
+    c.run("twine upload dist/*")
 
 
 @task
@@ -30,12 +36,6 @@ def lint(c):
 @task(pre=[lint, test])
 def check(c):
     """Check the code quality and run tests."""
-    pass
-
-
-@task(pre=[clean, build])
-def release(c):
-    """Clean up, build, and release the project."""
     pass
 
 

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "floatingtime"
+version = "0.1.1"
+authors = [
+  { name="Binyan Li", email="lbyxiafei@gmail.com" },
+]
+description = "Floating time app."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/lbyxiafei/floatingtime"
