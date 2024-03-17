@@ -1,5 +1,6 @@
-import time
 import schedule
+import sys
+import time
 
 from floatingtime.time_window import TimeWindow
 
