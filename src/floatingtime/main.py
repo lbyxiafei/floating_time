@@ -2,8 +2,7 @@ import time
 import schedule
 import sys
 
-
-from time_window import TimeWindow
+from floatingtime.time_window import TimeWindow
 
 
 def run_job():
