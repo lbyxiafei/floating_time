@@ -5,19 +5,19 @@ import sys
 from floatingtime.time_window import TimeWindow
 
 
-def run_job():
+def _show():
     tw = TimeWindow()
     tw.show()
 
 
-def run():
-    if len(sys.argv) > 1 and sys.argv[1] == "debug":
-        run_job()
-        quit()
+def debug():
+    _show()
 
-    # schedule.every().minute.at(":55").do(run_job)
-    schedule.every().hour.at("29:55").do(run_job)
-    schedule.every().hour.at("59:55").do(run_job)
+
+def run():
+    # schedule.every().minute.at(":55").do(_show)
+    schedule.every().hour.at("29:55").do(_show)
+    schedule.every().hour.at("59:55").do(_show)
 
     while True:
         schedule.run_pending()
@@ -25,4 +25,7 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    if len(sys.argv) > 1 and sys.argv[1] == "debug":
+        debug()
+    else:
+        run()

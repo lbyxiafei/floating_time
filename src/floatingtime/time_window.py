@@ -26,7 +26,7 @@ class TimeWindow:
             f"{self.window_width}x{self.window_height}+{self.x_pos}+{self.y_pos}"
         )
 
-        self.label = tk.Label(self.window, font=("Arial", 36), fg="white", bg="black")
+        self.label = tk.Label(self.window, font=("Arial", 36, "bold"), fg="white", bg="black")
         self.label.pack(fill=tk.BOTH, expand=True)
 
         self.update_time()
