@@ -11,7 +11,7 @@ def run_job():
     tw.show()
 
 
-if __name__ == "__main__":
+def run():
     if len(sys.argv) > 1 and sys.argv[1] == "debug":
         run_job()
         quit()
@@ -22,3 +22,7 @@ if __name__ == "__main__":
     while True:
         schedule.run_pending()
         time.sleep(1)
+
+
+if __name__ == "__main__":
+    run()
