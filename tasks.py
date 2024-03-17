@@ -3,12 +3,12 @@ from invoke import task
 
 @task
 def run(c):
-    c.run("python ./src/floatingtime/_main.py")
+    c.run("python ./src/floatingtime/main.py")
 
 
 @task
 def debug(c):
-    c.run("python ./src/floatingtime/_main.py debug")
+    c.run("python ./src/floatingtime/main.py debug")
 
 
 @task

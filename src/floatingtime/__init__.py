@@ -1,1 +1,1 @@
-from floatingtime.main import run, debug
+from floatingtime.main import run, run_test

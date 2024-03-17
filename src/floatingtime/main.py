@@ -1,6 +1,5 @@
 import time
 import schedule
-import sys
 
 from floatingtime.time_window import TimeWindow
 
@@ -10,7 +9,7 @@ def _show():
     tw.show()
 
 
-def debug():
+def run_test():
     _show()
 
 
@@ -20,12 +19,12 @@ def run():
     schedule.every().hour.at("59:55").do(_show)
 
     while True:
-        schedule.run_pending()
-        time.sleep(1)
+        try:
+            schedule.run_pending()
+            time.sleep(1)
+        except Exception as ex:
+            print(ex)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "debug":
-        debug()
-    else:
-        run()
+    run()
