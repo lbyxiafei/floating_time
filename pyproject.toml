@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "floatingtime"
-version = "1.2.0"
+version = "1.2.1"
 authors = [
   { name="Binyan Li", email="lbyxiafei@gmail.com" },
 ]

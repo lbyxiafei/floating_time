@@ -1,14 +1,9 @@
 import tkinter as tk
 import time
-import pygetwindow as gw
-
-from pygetwindow import PyGetWindowException
 
 
 class TimeWindow:
     def __init__(self):
-        self.cw = gw.getActiveWindow()  # Get current active window
-
         self.window = tk.Tk()
         self.window.overrideredirect(True)  # Remove title bar and buttons
         self.window.attributes("-topmost", 1)  # Make the window stay on top
@@ -34,14 +29,7 @@ class TimeWindow:
         self.update_time()
         self.window.after(10000, self.close_window)
 
-    def _change_focus_back(self):
-        try:
-            self.cw.activate()
-        except PyGetWindowException as ex:
-            print(ex)
-
     def update_time(self):
-        self._change_focus_back()
         current_time = time.strftime("%H:%M:%S")
         self.label.config(text=current_time)
         self.window.update_idletasks()
