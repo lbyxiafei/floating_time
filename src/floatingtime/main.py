@@ -15,7 +15,7 @@ def run():
         run_job()
         quit()
 
-    # schedule.every().hour.at("29:55").do(run_job)
+    # schedule.every().minute.at(":55").do(run_job)
     schedule.every().hour.at("59:55").do(run_job)
 
     while True:
