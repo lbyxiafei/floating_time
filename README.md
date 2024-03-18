@@ -1,6 +1,8 @@
 
 This Python application showcases a floating window timer that appears every half-hour (`HH:30`) and hour (`HH:00`), remaining visible for 10 seconds.
 
+![Overview](https://github.com/lbyxiafei/floating_time/blob/main/img/overview.png)
+
 # Install on Windows
 
 Requirements: `python >= 3.9`. Install application and dependencies:
