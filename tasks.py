@@ -7,6 +7,11 @@ def run(c):
 
 
 @task
+def period(c):
+    c.run("python ./src/floatingtime/main.py period")
+
+
+@task
 def debug(c):
     c.run("python ./src/floatingtime/main.py debug")
 

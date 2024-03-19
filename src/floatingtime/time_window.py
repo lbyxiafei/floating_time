@@ -3,11 +3,11 @@ import time
 
 
 class TimeWindow:
-    def __init__(self):
+    def __init__(self, close_delay):
         self.window = tk.Tk()
         self.window.overrideredirect(True)  # Remove title bar and buttons
         self.window.attributes("-topmost", 1)  # Make the window stay on top
-        self.window.attributes("-alpha", 0.8)  # Set the -alpha value to 0.6
+        self.window.attributes("-alpha", 0.8)  # Set the -alpha value to 0.8
 
         self.screen_width = self.window.winfo_screenwidth()
         self.screen_height = self.window.winfo_screenheight()
@@ -27,7 +27,7 @@ class TimeWindow:
         self.label.pack(fill=tk.BOTH, expand=True)
 
         self.update_time()
-        self.window.after(10000, self.close_window)
+        self.window.after(close_delay, self.close_window)
 
     def update_time(self):
         current_time = time.strftime("%H:%M:%S")
