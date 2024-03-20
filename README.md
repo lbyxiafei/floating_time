@@ -1,11 +1,14 @@
 
-This Python application showcases a floating window timer that appears every half-hour (`HH:30`) and hour (`HH:00`), remaining visible for 10 seconds.
+Time is everything we are having! Introducing a floating timer window application that keeps you on track effortlessly. Set it once, and every 30 minutes, your custom timer pops up, gently reminding you to stay focused and make the most of your precious time. 
+Maximize productivity, stay organized, and seize every moment. Download now and harness the power of mindful time management!
 
 Windows:
 ![Windows](https://github.com/lbyxiafei/floating_time/blob/main/img/overview.png)
 
 Mac:
 ![Mac](https://github.com/lbyxiafei/floating_time/blob/main/img/overview_mac.jpg)
+
+This Python application showcases a floating window timer that appears every half-hour (`HH:30`) and hour (`HH:00`), remaining visible for 10 seconds.
 
 # Installations
 
