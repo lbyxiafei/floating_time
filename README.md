@@ -1,5 +1,6 @@
 
 Time is everything we are having! Introducing a floating timer window application that keeps you on track effortlessly. Set it once, and every 30 minutes, your custom timer pops up, gently reminding you to stay focused and make the most of your precious time. 
+
 Maximize productivity, stay organized, and seize every moment. Download now and harness the power of mindful time management!
 
 Windows:
